@@ -4,11 +4,13 @@
   "main": "Main.xaml",
   "dependencies": {
     "UiPath.Excel.Activities": "[2.16.2]",
+    "UiPath.Form.Activities": "[1.9.3]",
     "UiPath.Mail.Activities": "[1.18.2]",
     "UiPath.OpenAI.IntegrationService.Activities": "[5.0.2-preview]",
     "UiPath.System.Activities": "[22.10.4]",
     "UiPath.Testing.Activities": "[22.10.3]",
-    "UiPath.UIAutomation.Activities": "[22.10.5]"
+    "UiPath.UIAutomation.Activities": "[22.10.5]",
+    "UiPath.WebAPI.Activities": "[1.16.2]"
   },
   "webServices": [],
   "entitiesStores": [],
