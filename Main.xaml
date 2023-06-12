@@ -211,13 +211,14 @@
                           <InArgument x:TypeArguments="x:String" x:Key="in_testCases">
                             <VisualBasicValue x:TypeArguments="x:String" ExpressionText="testCase" />
                           </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_requirement">
+                            <Literal x:TypeArguments="x:String">Requirement to create test cases for PO &amp; PR</Literal>
+                          </InArgument>
                         </ui:InvokeWorkflowFile.Arguments>
                       </ui:InvokeWorkflowFile>
                       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="SyncTC_TestManager.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="431.3333333333333,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="SyncTC_TestManager.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
-                          <InArgument x:TypeArguments="x:String" x:Key="testmanager_instanceurl">
-                            <Literal x:TypeArguments="x:String">https://staging.uipath.com/indiaseteam/DefaultTenant/testmanager_</Literal>
-                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="testmanager_instanceurl">https://staging.uipath.com/indiaseteam/DefaultTenant/testmanager_</InArgument>
                         </ui:InvokeWorkflowFile.Arguments>
                       </ui:InvokeWorkflowFile>
                       <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="431.3333333333333,54" sap2010:WorkflowViewState.IdRef="CommentOut_1">
