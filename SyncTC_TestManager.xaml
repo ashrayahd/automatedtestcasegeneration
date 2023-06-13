@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1316,2312.6666666666665</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>697.3333333333334,2251.3333333333335</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>SyncingDetails_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="76">
@@ -101,13 +101,17 @@
       <AssemblyReference>System.Private.Uri</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SyncingDetails" sap:VirtualizedContainerService.HintSize="707.3333333333334,2248" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="SyncingDetails" sap:VirtualizedContainerService.HintSize="707.3333333333334,2186.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dtSummary" />
       <Variable x:TypeArguments="scg:Dictionary(x:String, scg:List(x:String))" Name="listOfRequirement" />
       <Variable x:TypeArguments="scg:List(x:String)" Name="testCaseDetails" />
       <Variable x:TypeArguments="x:String" Name="access_token" />
-      <Variable x:TypeArguments="x:String" Name="projectId" />
+      <Variable x:TypeArguments="x:String" Name="projectId">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String">c65740db-8f42-0000-a209-0b45759b17e5</Literal>
+        </Variable.Default>
+      </Variable>
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -116,36 +120,37 @@
     </sap:WorkflowViewStateService.ViewState>
     <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Authenticate Test Manager - Get Access Token" sap:VirtualizedContainerService.HintSize="645.3333333333334,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Frameworks\Authenticate.xaml">
       <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="client_id">
-          <Literal x:TypeArguments="x:String">52abc3a2-ef9b-4505-8fcc-7dc081b9ef5f</Literal>
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="client_secret">
-          <Literal x:TypeArguments="x:String">iIZY68gJ(wq!IkdG</Literal>
-        </InArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="scope">
-          <Literal x:TypeArguments="x:String">TM.Administration TM.Attachments TM.CustomFieldDefinitions TM.CustomFieldValues TM.Defects TM.Maintenance TM.ObjectLabels TM.Projects TM.Requirements TM.TestCases TM.TestExecutions TM.TestSets TM.Users</Literal>
-        </InArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="access_token">
-          <VisualBasicReference x:TypeArguments="x:String" ExpressionText="access_token" />
-        </OutArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="testManagerEnv">
-          <Literal x:TypeArguments="x:String">staging</Literal>
-        </InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="client_id">52abc3a2-ef9b-4505-8fcc-7dc081b9ef5f</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="client_secret">iIZY68gJ(wq!IkdG</InArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="scope">TM.Administration TM.Attachments TM.CustomFieldDefinitions TM.CustomFieldValues TM.Defects TM.Maintenance TM.ObjectLabels TM.Projects TM.Requirements TM.TestCases TM.TestExecutions TM.TestSets TM.Users</InArgument>
+        <OutArgument x:TypeArguments="x:String" x:Key="access_token">[access_token]</OutArgument>
+        <InArgument x:TypeArguments="x:String" x:Key="testManagerEnv">staging</InArgument>
       </ui:InvokeWorkflowFile.Arguments>
     </ui:InvokeWorkflowFile>
-    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Frameworks\SelectProject.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="645.3333333333334,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Frameworks\SelectProject.xaml">
-      <ui:InvokeWorkflowFile.Arguments>
-        <InArgument x:TypeArguments="x:String" x:Key="access_token">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="access_token" />
-        </InArgument>
-        <OutArgument x:TypeArguments="x:String" x:Key="selected_project">
-          <VisualBasicReference x:TypeArguments="x:String" ExpressionText="projectId" />
-        </OutArgument>
-        <InArgument x:TypeArguments="x:String" x:Key="testManager_instanceURL">
-          <VisualBasicValue x:TypeArguments="x:String" ExpressionText="testmanager_instanceurl" />
-        </InArgument>
-      </ui:InvokeWorkflowFile.Arguments>
-    </ui:InvokeWorkflowFile>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="645.3333333333334,54" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,226" sap2010:WorkflowViewState.IdRef="Sequence_8">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Frameworks\SelectProject.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="388,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Frameworks\SelectProject.xaml">
+            <ui:InvokeWorkflowFile.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="access_token">[access_token]</InArgument>
+              <OutArgument x:TypeArguments="x:String" x:Key="selected_project">[projectId]</OutArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="testManager_instanceURL">[testmanager_instanceurl]</InArgument>
+            </ui:InvokeWorkflowFile.Arguments>
+          </ui:InvokeWorkflowFile>
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
     <ui:ReadRange AddHeaders="True" DataTable="[dtSummary]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="645.3333333333334,88" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Summary" WorkbookPath="Input\TestCases.xlsx">
       <ui:ReadRange.Range>
         <InArgument x:TypeArguments="x:String">
@@ -275,21 +280,11 @@
                       </sap:WorkflowViewStateService.ViewState>
                       <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="AddingManualSteps.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="371.3333333333333,115.33333333333333" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Frameworks\AddingManualSteps.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
-                          <InArgument x:TypeArguments="x:String" x:Key="sheet_name">
-                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="CurrentRow(&quot;Sheet&quot;).ToString" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="testCaseId">
-                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="testJObject(&quot;id&quot;).ToString" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="access_token">
-                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="access_token" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_ProjectId">
-                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="projectId" />
-                          </InArgument>
-                          <InArgument x:TypeArguments="x:String" x:Key="testManager_instanceURL">
-                            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="testmanager_instanceurl" />
-                          </InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="sheet_name">[CurrentRow("Sheet").ToString]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="testCaseId">[testJObject("id").ToString]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="access_token">[access_token]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_ProjectId">[projectId]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="testManager_instanceURL">[testmanager_instanceurl]</InArgument>
                         </ui:InvokeWorkflowFile.Arguments>
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
